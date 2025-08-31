@@ -1,0 +1,47 @@
+{
+  "server": {
+    "name": "testing-mcp-server",
+    "version": "0.1.0",
+    "protocol_version": "2024-11-05",
+    "capabilities": {
+      "tools": {
+        "listChanged": true
+      },
+      "resources": {
+        "subscribe": false,
+        "listChanged": false
+      },
+      "prompts": {
+        "listChanged": false
+      },
+      "logging": {}
+    }
+  },
+  "tools": {
+    "enabled": [
+      "read_file",
+      "list_files",
+      "echo"
+    ],
+    "settings": {
+      "read_file": {
+        "max_file_size": 1048576,
+        "allowed_extensions": [".txt", ".md", ".json", ".py", ".js", ".html", ".css"]
+      },
+      "list_files": {
+        "max_depth": 3,
+        "show_hidden": false
+      }
+    }
+  },
+  "testing": {
+    "validation": {
+      "strict_mode": true,
+      "timeout_seconds": 30
+    },
+    "logging": {
+      "level": "INFO",
+      "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    }
+  }
+}
